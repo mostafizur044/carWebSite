@@ -1,0 +1,155 @@
+<div class="container">
+        <section id="subSection">
+          <div class="row">
+
+            <div class="col-md-offset-1 col-md-3 form-group form-inline" style="padding: 15px 15px 15px 15px;">
+              <strong>Order By:</strong>
+              <input type="text" ng-model="sortType">
+            </div>
+            <div class="col-md-4 form-group" style="padding: 15px 15px 15px 15px;">
+              <strong>Group By:</strong>
+              <select ng-model = 'group' ng-change='groupBy(group)'>
+                <option>Name</option>
+                <option>Car Name</option>
+                <option>Appointment Date & Time</option>
+              </select>
+              <div class="checkbox" ng-show="group !== ''">
+                <label><input type="checkbox" ng-model="check" ng-change='clicked(check)'>Descending Group By</label>
+              </div>
+            </div>
+            <div class="input-group col-md-3" id="SearchSection">
+              <input type="text" class="form-control" placeholder="Search" ng-model='search' ng-change="filter()">
+            </div>
+          </div>
+        </section>
+
+
+	<section id="subSection">
+		<h2>List of Appointment</h2>
+		  <div class="table-responsive">.
+		  	<table class="table table-hover">
+			    <thead>
+			      <tr>
+			        <th>
+                <a ng-click="sortType = 'Name'; sortReverse = !sortReverse; orderby('personName')">Name <span ng-show="sortType == 'Name'" class="fa" ng-class="sortReverse ? 'fa-caret-up' : 'fa-caret-down'"></span></a>
+              </th>
+			        <th>
+                <a ng-click="sortType = 'Car Name'; sortReverse = !sortReverse; orderby('carName')">Car Name <span ng-show="sortType == 'Car Name'" class="fa" ng-class="sortReverse ? 'fa-caret-up' : 'fa-caret-down'"></span></a>
+                
+              </th>
+			        <th>
+                <a ng-click="sortType = 'Contact Number'; sortReverse = !sortReverse; orderby('number')">Contact Number <span ng-show="sortType == 'Contact Number'" class="fa" ng-class="sortReverse ? 'fa-caret-up' : 'fa-caret-down'"></span></a>
+              </th>
+			        <th>
+                <a ng-click="sortType = 'Appointment Date & Time'; sortReverse = !sortReverse; orderby('date')">Appointment Date & Time <span ng-show="sortType == 'Appointment Date & Time'" class="fa" ng-class="sortReverse ? 'fa-caret-up' : 'fa-caret-down'"></span></a>
+              </th>
+			        <th>Status</th>
+			        <th>Action</th>  
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr ng-repeat="list in listArray | startFrom:(currentPage - 1) * itemsPerPage | limitTo:itemsPerPage">
+			        <td>{{list.personName}}</td>
+			        <td>{{list.carName}}</td>
+			        <td>{{list.number}}</td>
+			        <td ng-class="statusCheck(list.date)">{{list.date}}</td> 
+			        <td><p class="btn btn-default btn-xs" ng-class="{'Active': status == 'Active', 'expired' : status =='Expired'}">{{status}}</p></td>
+			        <td><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#editModal" ng-click="editInfo(list.id)">Edit</button>  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal" ng-click="delete(list)">Delete</button></td>
+			      </tr>
+
+			    </tbody>
+		  	</table>
+		  </div> 
+
+      <div>
+        <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+          <option ng-repeat="x in numItem">{{x}}</option>
+        </select> records at a time.
+      </div>
+
+      <pagination total-items="totalItems" ng-model='currentPage' max-size='maxSize' items-per-page='itemsPerPage' boundary-links='true' num-pages="numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" force-ellipses="true">
+        </pagination>
+
+      <pre>Page: {{currentPage}} / {{numPages}}</pre>
+
+	</section>           
+</div>
+ 
+ 
+
+ <!-- Modal Appointment   -->
+          <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Edit Appointment</h4>
+                </div>
+                <div class="modal-body row">
+                  <form class="col-md-offset-2 col-md-8" name="userForm">
+                      <div class="form-group">
+                        <fieldset disabled>
+                          <label for="full">Name:</label>
+                          <input type="text" class="form-control" id="full" ng-model="edit.personName">
+                        </fieldset>
+                      </div>
+                      <div class="form-group">
+                            <label for="phone">Contact Number:</label>
+                            <input type="text" class="form-control" id="phone" ng-model="edit.number" maxlength="11">
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Appointment Date & Time:</label>
+                        <input type='text' class="form-control" ng-model="edit.date">
+                      </div>
+                      <div class="form-group">
+                        <fieldset disabled>
+                          <label for="car">Selected Car:</label>
+                          <span class="form-control" id="car" ng-model="edit.carName">{{edit.carName}}</span>
+                        </fieldset>
+                      </div>
+                      <div class="form-group">
+                        <button type="button" class="btn btn-success" ng-click="update(edit.id)" data-toggle="modal" data-target="#alertModal">Add</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding-left: 10px;">Cancel</button>
+                      </div>
+                  </form>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+ <!-- Modal Alert-->
+            <div id="alertModal" class="modal fade" role="dialog">
+              <div class="modal-dialog alert alert-{{color}}">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-body">
+                      <strong>Success!</strong> Informations have successfully updated.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+<!-- Modal Delete-->  
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>You are going to delete <strong>{{name}}</strong>'s appointment. Are you sure ???</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" ng-click="deleteInfo(id)" data-toggle="modal" data-target="#alertModal">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding-left: 10px;">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>

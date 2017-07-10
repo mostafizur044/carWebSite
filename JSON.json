@@ -1,0 +1,288 @@
+[
+	{
+	"fullName": "Toyota PREMIO FL GREEN 2012",
+	"pics" : {
+			"main": "../image/Toyota/main.jpg",
+			"sub1": "../image/Toyota/sub1.jpg",
+			"sub2": "../image/Toyota/sub2.jpg",
+			"sub3": "../image/Toyota/sub3.jpg"
+		},
+	"brand": "Toyota",
+	"modelYear": "2010",
+	"condition": "Reconditioned",
+	"transmision": "Automatic",
+	"modelName": "PREMIO FL GREEN",
+	"bodyType": "Saloon",
+	"fule": "Octane",
+	"engineCap": "1500",
+	"mileage": "26400",
+	"price": "3500000"
+	},
+	{
+	"fullName": "Subaru IMPREZA 2011",
+	"pics" : {
+			"main": "../image/Subaru/main.jpg",
+			"sub1": "../image/Subaru/sub1.jpg",
+			"sub2": "../image/Subaru/sub2.jpg",
+			"sub3": "../image/Subaru/sub3.jpg"
+		},
+	"brand": "Subaru",
+	"modelYear": "2011",
+	"condition": "Reconditioned",
+	"transmision": "Automatic",
+	"modelName": "IMPREZA",
+	"bodyType": "Saloon",
+	"fule": "Petrol",
+	"engineCap": "1500",
+	"mileage": "33000",
+	"price": "2550000"
+	},
+	{
+	"fullName": "Land Rover Evoque 2012",
+	"pics" : {
+			"main": "../image/Land/main.jpg",
+			"sub1": "../image/Land/sub1.jpg",
+			"sub2": "../image/Land/sub2.jpg",
+			"sub3": "../image/Land/sub3.jpg"
+		},
+	"brand": "Land Rover",
+	"modelYear": "2012",
+	"condition": "Reconditioned",
+	"transmision": "Automatic",
+	"modelName": "Evoque",
+	"bodyType": "SUV / 4x4",
+	"fule": "Diesel / Octal",
+	"engineCap": "2200",
+	"mileage": "56454",
+	"price": "3055000"
+	},
+	{
+	"fullName": "Honda CRV G SUNROOF 2000",
+	"pics" : {
+			"main": "../image/Honda/main.jpg",
+			"sub1": "../image/Honda/sub1.jpg",
+			"sub2": "../image/Honda/sub2.jpg",
+			"sub3": "../image/Honda/sub3.jpg"
+		},
+	"brand": "Honda",
+	"modelYear": "2000",
+	"condition": "Used",
+	"transmision": "Automatic",
+	"modelName": "CRV G SUNROOF",
+	"bodyType": "SUV / 4x4",
+	"fule": "Petrol",
+	"engineCap": "2000",
+	"mileage": "90000",
+	"price": "900000"
+	},
+	{
+	"fullName": "Mitsubishi Lancher ex sunroof 2009",
+	"pics" : {
+			"main": "../image/Mitsubishi/main.jpg",
+			"sub1": "../image/Mitsubishi/sub1.jpg",
+			"sub2": "../image/Mitsubishi/sub2.jpg",
+			"sub3": "../image/Mitsubishi/sub3.jpg"
+		},
+	"brand": "Mitsubishi",
+	"modelYear": "2009",
+	"condition": "Used",
+	"transmision": "Automatic",
+	"modelName": "Lancher ex sunroof",
+	"bodyType": "Saloon",
+	"fule": "Octal",
+	"engineCap": "1500",
+	"mileage": "80000",
+	"price": "1550000"
+	},
+	{
+	"fullName": "Lexus Harrier 2005",
+	"pics" : {
+			"main": "../image/Lexus/main.jpg",
+			"sub1": "../image/Lexus/sub1.jpg",
+			"sub2": "../image/Lexus/sub2.jpg",
+			"sub3": "../image/Lexus/sub3.jpg"
+		},
+	"brand": "Lexus",
+	"modelYear": "2005",
+	"condition": "Used",
+	"transmision": "Automatic",
+	"modelName": "Harrier",
+	"bodyType": "SUV / 4x4",
+	"fule": "Octal",
+	"engineCap": "2400",
+	"mileage": "50000",
+	"price": "2000000"
+	},
+	{
+	"fullName": "BMW 520D 2015",
+	"pics" : {
+			"main": "../image/BMW/main.jpg",
+			"sub1": "../image/BMW/sub1.jpg",
+			"sub2": "../image/BMW/sub2.jpg",
+			"sub3": "../image/BMW/sub3.jpg"
+		},
+	"brand": "BMW",
+	"modelYear": "2015",
+	"condition": "Reconditioned",
+	"transmision": "Automatic",
+	"modelName": "520D",
+	"bodyType": "Saloon",
+	"fule": "Diesel / Octal",
+	"engineCap": "2000",
+	"mileage": "20000",
+	"price": "9500000"
+	},
+	{
+	"fullName": "Kia Sportage 2011",
+	"pics" : {
+			"main": "../image/Kia/main.jpg",
+			"sub1": "../image/Kia/sub1.jpg",
+			"sub2": "../image/Kia/sub2.jpg",
+			"sub3": "../image/Kia/sub3.jpg"
+		},
+	"brand": "Kia",
+	"modelYear": "2011",
+	"condition": "Used",
+	"transmision": "Automatic",
+	"modelName": "Sportage",
+	"bodyType": "Hatchback",
+	"fule": "Octal",
+	"engineCap": "2000",
+	"mileage": "13000",
+	"price": "4530000"
+	},
+	{
+	"fullName": "Isuzu Trooper 1992",
+	"pics" : {
+			"main": "../image/Isuzu/main.jpg",
+			"sub1": "../image/Isuzu/sub1.jpg",
+			"sub2": "../image/Isuzu/sub2.jpg",
+			"sub3": "../image/Isuzu/sub3.jpg"
+		},
+	"brand": "Isuzu",
+	"modelYear": "1992",
+	"condition": "Used",
+	"transmision": "Manual",
+	"modelName": "Trooper",
+	"bodyType": "-",
+	"fule": "CNG / Octal",
+	"engineCap": "2000",
+	"mileage": "176174",
+	"price": "250000"
+	},
+	{
+	"fullName": "Mitsubishi Lancer, GLX, Blue 2002",
+	"pics" : {
+			"main": "../image/Mitsubishi/main1.jpg",
+			"sub1": "../image/Mitsubishi/sub4.jpg",
+			"sub2": "../image/Mitsubishi/sub5.jpg",
+			"sub3": "../image/Mitsubishi/sub6.jpg"
+		},
+	"brand": "Mitsubishi",
+	"modelYear": "2002",
+	"condition": "Used",
+	"transmision": "Manual",
+	"modelName": "Lancer, GLX, Blue",
+	"bodyType": "Saloon",
+	"fule": "Octal",
+	"engineCap": "1300",
+	"mileage": "150000",
+	"price": "650000"
+	},
+	{
+	"fullName": "Toyota EE 1990",
+	"pics" : {
+			"main": "../image/Toyota/main1.jpg",
+			"sub1": "../image/Toyota/sub4.jpg",
+			"sub2": "../image/Toyota/sub5.jpg",
+			"sub3": "../image/Toyota/sub6.jpg"
+		},
+	"brand": "Toyota",
+	"modelYear": "190",
+	"condition": "Used",
+	"transmision": "Manual",
+	"modelName": "EE",
+	"bodyType": "Saloon",
+	"fule": "CNG / petrol",
+	"engineCap": "1300",
+	"mileage": "176000",
+	"price": "1800000"
+	},
+	{
+	"fullName": "Daihatsu Copen 2003",
+	"pics" : {
+			"main": "../image/Daihatsu/main.jpg",
+			"sub1": "../image/Daihatsu/sub1.jpg",
+			"sub2": "../image/Daihatsu/sub2.jpg",
+			"sub3": "../image/Daihatsu/sub3.jpg"
+		},
+	"brand": "Daihatsu",
+	"modelYear": "2003",
+	"condition": "Used",
+	"transmision": "Automatic",
+	"modelName": "Copen",
+	"bodyType": "Coupé/Sports",
+	"fule": "Petrol",
+	"engineCap": "650",
+	"mileage": "42000",
+	"price": "1500000"
+	},
+	{
+	"fullName": "Mazda Roadster Ltd 2015",
+	"pics" : {
+			"main": "../image/Mazda/main.jpg",
+			"sub1": "../image/Mazda/sub1.jpg",
+			"sub2": "../image/Mazda/sub2.jpg",
+			"sub3": "../image/Mazda/sub3.jpg"
+		},
+	"brand": "Mazda",
+	"modelYear": "2015",
+	"condition": "Reconditioned",
+	"transmision": "Automatic",
+	"modelName": "Roadster Ltd",
+	"bodyType": "Convertible",
+	"fule": "Petrol / Octal",
+	"engineCap": "1500",
+	"mileage": "13050",
+	"price": "4275000"
+	},
+	{
+	"fullName": "Toyota STARLET SWOLLEN 1995",
+	"pics" : {
+			"main": "../image/Toyota/main1.jpg",
+			"sub1": "../image/Toyota/sub7.jpg",
+			"sub2": "../image/Toyota/sub8.jpg",
+			"sub3": "../image/Toyota/sub9.jpg"
+		},
+	"brand": "Toyota",
+	"modelYear": "1995",
+	"condition": "Used",
+	"transmision": "Automatic",
+	"modelName": "STARLET SWOLLEN",
+	"bodyType": "Hatchback",
+	"fule": "CNG / Octal",
+	"engineCap": "1331",
+	"mileage": "100174",
+	"price": "390000"
+	},
+	{
+	"fullName": "Maruti Suzuki WAGNOR 2006",
+	"pics" : {
+			"main": "../image/Maruti/main.jpg",
+			"sub1": "../image/Maruti/sub1.jpg",
+			"sub2": "../image/Maruti/sub2.jpg",
+			"sub3": "../image/Maruti/sub3.jpg"
+		},
+	"brand": "Maruti Suzuki",
+	"modelYear": "2006",
+	"condition": "Used",
+	"transmision": "Manual",
+	"modelName": "WAGNOR",
+	"bodyType": "Hatchback",
+	"fule": "CNG / Octal",
+	"engineCap": "1100",
+	"mileage": "50000",
+	"price": "350000"
+	}
+
+]

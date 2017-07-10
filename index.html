@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="car">
+<head>
+  <title>Car Websit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="node_modules/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- css add -->
+  <link rel="stylesheet" href="css/css.css">
+  <!-- angular -->
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script> -->
+  <script data-require="angular-ui-bootstrap@0.11.0" data-semver="0.11.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+  <script src="node_modules/firebase/firebase.js"></script>
+  <script src="node_modules/angularfire/dist/angularfire.min.js"></script>
+  <!-- Bower  -->
+  <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+  <!-- js files -->
+  <script type="text/javascript" src="js/app.module.js"></script>
+  <script type="text/javascript" src="js/app.router.js"></script>
+  <script type="text/javascript" src="js/service/service.js"></script><s></s>
+  <script type="text/javascript" src="js/controller/homeCtrl.js"></script>
+  <script type="text/javascript" src="js/controller/detailCtrl.js"></script>
+  <script type="text/javascript" src="js/controller/listCtrl.js"></script>
+  <script type="text/javascript" src="js/filter.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="home">Car Sell & Service</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="list">Appointment List</a></li>
+    </ul>
+  
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+ 
+<div ui-view=""></div>
+
+
+
+
+
+
+</body>
+</html>
+

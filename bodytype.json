@@ -1,0 +1,34 @@
+		[
+			{
+				"name": "Saloon",
+				"img": "../image/BodyType/icon-saloon.png"
+			},
+			{
+				"name": "MPV",
+				"img": "../image/BodyType/icon-mpv.png"
+			},
+			{
+				"name": "SUV / 4X4",
+				"img": "../image/BodyType/icon-suv.png"
+			},
+			{
+				"name": "Hatchback",
+				"img": "../image/BodyType/icon-hatchback.png"
+			},
+			{
+				"name": "Estate",
+				"img": "../image/BodyType/icon-estate.png"
+			},
+			{
+				"name": "Coupé/Sports",
+				"img": "../image/BodyType/icon-coupe.png"
+			},
+			{
+				"name": "Convertible",
+				"img": "../image/BodyType/icon-convertible.png"
+			}
+		]
+			
+			
+	
+

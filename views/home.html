@@ -1,0 +1,177 @@
+<div class="container">
+  <section>
+
+        <div id="slides_control">
+              <div>
+                <carousel interval="myInterval">
+                  <slide ng-repeat="slide in cars" active="slide.active">
+                    <img ng-src="{{slide.pics.main}}">
+                    <div class="carousel-caption">
+                      <h4>{{slide.fullName}}</h4>
+                    </div>
+                  </slide>
+                </carousel> 
+              </div>
+            </div>
+
+  </section>
+
+  <br>
+
+  <section>
+        <section id="subSection">
+          <div class="row">
+            <div class="input-group col-md-offset-3 col-md-6" id="SearchSection">
+              <input type="text" class="form-control" placeholder="Search" ng-model='search' ng-change='filter()'>
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i> Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style="background: #e6f1ee; height:3px;"></section>
+      
+        <section id="subSection" class="filterParameter" style="width:24.7%; float: left;">
+          <div>
+            <div data-toggle="collapse" data-target="#price" ng-click="resetPrice()">
+              <strong>Price (Tk)</strong><span class="caret"></span>
+            </div>
+            <div id="price" class="collapse" style="text-align:center;">
+              <br>
+              <input type="number" class="form-control" placeholder="Min." ng-model="minprice">
+              <b>To</b>
+              <input type="number" class="form-control" placeholder="Max." ng-model="maxprice">
+              <br>
+              <button type="button" class="btn" ng-click="range(minprice,maxprice,'price')">Apply Filter</button>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div data-toggle="collapse" data-target="#brand">
+              <strong>Brand</strong><span class="caret"></span>
+            </div>
+            <div id="brand" class="collapse">
+              <div class="checkbox" ng-repeat = "x in brandcount | startFrom: start  | limitTo: end" >
+                <label><input type="checkbox" ng-click="checkbox(x.brand,'brand')"> {{x.brand}} ({{x.count}})</label>
+              </div>
+                <span ng-click="showMore()" ng-show="end != brandcount.length"><i class="fa fa-plus-circle"></i> Show more</span>
+                <span ng-click="hideMore()" ng-show="end == brandcount.length"><i class="fa fa-minus-circle"></i> Hide</span>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div data-toggle="collapse" data-target="#modelYear" ng-click="resetYear()">
+              <strong>Model Year</strong><span class="caret"></span>
+            </div>
+            <div id="modelYear" class="collapse" style="text-align:center;">
+               <br>
+              <input type="number" class="form-control" placeholder="Min." ng-model="minyear">
+              <b>To</b>
+              <input type="number" class="form-control" placeholder="Max." ng-model="maxyear">
+              <br>
+              <button type="button" class="btn" ng-click="range(minyear,maxyear,'modelYear')">Apply Filter</button>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div data-toggle="collapse" data-target="#con">
+              <strong>Condition</strong><span class="caret"></span>
+            </div>
+            <div id="con" class="collapse">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-click="checkbox('Reconditioned','condition')"> Reconditioned</label><br>
+                <label><input type="checkbox" ng-click="checkbox('Used','condition')"> Used</label><br>
+                <label><input type="checkbox" ng-click="checkbox('New','condition')"> New</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div data-toggle="collapse" data-target="#transmission">
+              <strong >Transmission</strong><span class="caret"></span>
+            </div>            
+            <div id="transmission" class="collapse">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-click="checkbox('Automatic','transmision')"> Automatic</label><br>
+                <label><input type="checkbox" ng-click="checkbox('Manual','transmision')"> Manual</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div data-toggle="collapse" data-target="#body">
+              <strong>Body Type</strong><span class="caret"></span>
+            </div>            
+            <div id="body" class="collapse">
+              <div class="checkbox" ng-repeat = "body in bodyType">
+                <label><input type="checkbox" ng-click="checkbox(body.name,'bodyType')"> {{body.name}}</label>
+                <img ng-src="{{body.img}}">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div data-toggle="collapse" data-target="#mileage" ng-click="resetMileage()">
+              <strong>Mileage</strong><span class="caret"></span>
+            </div>
+            <div id="mileage" class="collapse" style="text-align:center;">
+              <br>
+              <input type="number" class="form-control" placeholder="Min." ng-model="minmileage">
+              <b>To</b>
+              <input type="number" class="form-control" placeholder="Max." ng-model="maxmileage">
+              <br>
+              <button type="button" class="btn" ng-click="range(minmileage,maxmileage,'mileage')">Apply Filter</button>
+            </div>
+          </div>
+        </section>
+
+
+        <section id="subSection" style="width:75%; float: right;">
+          <div class="row" style="align: center;" ng-repeat="chunk in subCars | startFrom:(currentPage - 1) * itemsPerPage | limitTo:itemsPerPage">
+            <!--  -->
+            <div class="col-md-6" ng-repeat="item in chunk">
+              <div class="panel panel-primary">
+                <div class="panel-heading"> 
+                  <strong>{{item.fullName}}</strong>
+                </div>
+                <div class="panel-body">
+                  <div>
+                    <a ui-sref="detail">  
+                    <img src="{{item.pics.main}}">
+                    </a>
+                  </div>
+                  <div>
+                    <hr>
+                    <div class="caption" style="color: green;">
+                      <span>Mileage: <strong>{{item.mileage | number:0}} km</strong></span>
+                      <span style="float: right">Price: <strong>{{item.price | currency : "Tk "}}</strong></span>
+                      <br><br>
+                      <span>Model: <strong>{{item.modelName}}</strong></span>
+                      <a ui-sref="detail({obj: item.fullName})" type="button" class="btn btn-info">More Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div>
+
+              <div>
+                <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+                  <option ng-repeat="x in numItem">{{x}}</option>
+                </select> records at a time.
+              </div>
+
+              <pagination total-items="totalItems" ng-model='currentPage' max-size='maxSize' items-per-page='itemsPerPage' boundary-links='true' num-pages="numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" force-ellipses="true">
+                </pagination>
+
+              <pre>Page: {{currentPage}} / {{numPages}}</pre>
+
+        </section>
+
+  </section>
+</div>
+
+
